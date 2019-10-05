@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public static class Generator
 {
 
@@ -62,28 +60,31 @@ public static class Generator
             zufall = new System.Random(seed);
         
         Tile[,] result = new Tile[height, width];
-        for (int x = 0; x < height; x++)
+        
+        // Alle Zeilen durchgehen (height)
+        for (int h = 0; h < height; h++)
         {
-            for (int y = 0; y < width; y++)
+            // Alle Spalten durchgehen (width)
+            for (int w = 0; w < width; w++)
             {
                 
-                if ((x == 0) || (y == 0) || (x == height - 1) || (y == width - 1))
+                if ((h == 0) || (w == 0) || (h == height - 1) || (w == width - 1))
                 {
-                    result[x, y] = Tile3;
+                    result[h, w] = Tile3;
                 }
                 else
                 {
-                    Tile t = GenerateTile(result, x, y, width, seed);
+                    Tile t = GenerateTile(result, w, h, width, seed);
                     if (t == null)
                         t = Tile2;
-                    result[x, y] = t;
+                    result[h, w] = t;
                 }
             }
         }
         return result;
     }
 
-    private static Tile GenerateTile(Tile[,] tileMap, int posX, int posY, int width, int seed)
+    private static Tile GenerateTile(Tile[,] tileMap, int w, int h, int width, int seed)
     {
         System.Random zufall;
         if (seed == 0)
@@ -99,12 +100,34 @@ public static class Generator
             Tile t = standardtiles[zufall.Next(0,9)];
             if (t.Name == "Tile3" || t.Name == "Tile6" || t.Name == "Tile2" || t.Name == "Tile7")
             {
-                if (counter % 3 != 0) continue;
+                if (counter % 2 != 0) continue;
             }
 
-            bool res1 = IsTileCompatibleOO(t, posX, posY, tileMap);
-            bool res2 = IsTileCompatibleOL(t, posX, posY, tileMap);
-            bool res3 = IsTileCompatibleOR(t, posX, posY, tileMap,width);
+            // Zu viele Gabelungen verhindern
+            if (t.Name == "Tile8" || t.Name == "Tile0")
+            {
+                if (h > 0 && w > 0)
+                {
+                    try
+                    {
+                        if ((tileMap[h, w-1].Name == "Tile8") || (tileMap[h, w-1].Name == "Tile0"))
+                        {
+                            continue;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                        throw;
+                    }
+
+                }
+            }
+
+            Console.WriteLine($"Gefunden (Tile/X/Y): {t.Name} - {w} - {h}");
+            bool res1 = IsTileCompatibleOO(t, w, h, tileMap);
+            bool res2 = IsTileCompatibleOL(t, w, h, tileMap);
+            bool res3 = IsTileCompatibleOR(t, w, h, tileMap,width);
             if (res1 && res2 && res3)
             {
                 result = t;
@@ -114,40 +137,41 @@ public static class Generator
         }
         return result;
     }
+    
 
-    private static bool IsTileCompatibleOO(Tile originalTile,int xPos, int yPos, Tile[,] tileMap)
+    private static bool IsTileCompatibleOO(Tile originalTile,int w, int h, Tile[,] tileMap)
     {
-        if (yPos == 0) return true;
-        return AreTilesCompatible(originalTile.OO, tileMap[xPos, yPos-1].UU);
+        if (h == 0) return true;
+        return AreTilesCompatible(originalTile.OO, tileMap[h-1,w].UU);
     }
 
-    private static bool IsTileCompatibleOL(Tile originalTile,int xPos, int yPos, Tile[,] tileMap)
+    private static bool IsTileCompatibleOL(Tile originalTile,int w, int h, Tile[,] tileMap)
     {
         // Gerade Positionen
-        if (xPos % 2 == 0)
+        if (w % 2 == 0)
         {
-            if (xPos == 0) return true;
-            return AreTilesCompatible(originalTile.OL, tileMap[xPos - 1, yPos].UR);
+            if (w == 0) return true;
+            return AreTilesCompatible(originalTile.OL, tileMap[h,w-1].UR);
         }
         else
         {
-            if (yPos == 0) return true;
-            return AreTilesCompatible(originalTile.OL, tileMap[xPos - 1, yPos-1].UR);
+            if (h == 0) return true;
+            return AreTilesCompatible(originalTile.OL, tileMap[h-1, w-1].UR);
         }
     }
     
-    private static bool IsTileCompatibleOR(Tile originalTile,int xPos, int yPos, Tile[,] tileMap, int width)
+    private static bool IsTileCompatibleOR(Tile originalTile,int w, int h, Tile[,] tileMap, int width)
     {
-        if (xPos == width) return true;
+        if (w == width) return true;
         // Gerade Positionen
-        if (xPos % 2 == 0)
+        if (w % 2 == 0)
         {
             return true;
         }
         else
         {
-            if (yPos == 0) return true;
-            return AreTilesCompatible(originalTile.OL, tileMap[xPos - 1, yPos+1].UR);
+            if (h == 0) return true;
+            return AreTilesCompatible(originalTile.OL, tileMap[h-1, w+1].UR);
         }        
     }    
     
