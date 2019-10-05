@@ -60,9 +60,21 @@ public static class Generator
         {
             for (int y = 0; y < width; y++)
             {
-                result[x, y] = standardtiles[zufall.Next(0,10)];
+                
+                if ((x == 0) || (y == 0) || (x == height - 1) || (y == width - 1))
+                {
+                    result[x, y] = Tile3;
+                }
+                else
+                {
+                    result[x, y] = standardtiles[zufall.Next(0,10)];
+                }
             }
         }
+        
+    
+        
+        
 
         return result;
     }
