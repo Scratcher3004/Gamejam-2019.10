@@ -100,29 +100,29 @@ public static class Generator
             Tile t = standardtiles[zufall.Next(0,9)];
             if (t.Name == "Tile3" || t.Name == "Tile6" || t.Name == "Tile2" || t.Name == "Tile7")
             {
-                if (counter % 2 != 0) continue;
+                if (counter % 4 != 0) continue;
             }
 
-            // Zu viele Gabelungen verhindern
-            if (t.Name == "Tile8" || t.Name == "Tile0")
-            {
-                if (h > 0 && w > 0)
-                {
-                    try
-                    {
-                        if ((tileMap[h, w-1].Name == "Tile8") || (tileMap[h, w-1].Name == "Tile0"))
-                        {
-                            continue;
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e);
-                        throw;
-                    }
-
-                }
-            }
+//            // Zu viele Gabelungen verhindern
+//            if (t.Name == "Tile8" || t.Name == "Tile0")
+//            {
+//                if (h > 0 && w > 0 && counter % 5 == 0)
+//                {
+//                    try
+//                    {
+//                        if ((tileMap[h, w-1].Name == "Tile8") || (tileMap[h, w-1].Name == "Tile0"))
+//                        {
+//                            continue;
+//                        }
+//                    }
+//                    catch (Exception e)
+//                    {
+//                        Console.WriteLine(e);
+//                        throw;
+//                    }
+//
+//                }
+//            }
 
             Console.WriteLine($"Gefunden (Tile/X/Y): {t.Name} - {w} - {h}");
             bool res1 = IsTileCompatibleOO(t, w, h, tileMap);
@@ -171,13 +171,13 @@ public static class Generator
         else
         {
             if (h == 0) return true;
-            return AreTilesCompatible(originalTile.OL, tileMap[h-1, w+1].UR);
+            return AreTilesCompatible(originalTile.OL, tileMap[h-1, w+1].UL);
         }        
     }    
     
     private static bool AreTilesCompatible(int tilepos_a, int tilepos_b)
     {
-        if (tilepos_b != Road) return true;
+        if (tilepos_a != Road) return true;
         if (tilepos_a == tilepos_b) return true;
         return false;
     }
