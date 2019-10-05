@@ -97,7 +97,7 @@ public static class Generator
         {
             counter += 1;
             Tile t = standardtiles[zufall.Next(0,9)];
-            if (t.Name == "Tile3" || t.Name == "Tile6")
+            if (t.Name == "Tile3")
             {
                 continue;
             }
@@ -171,13 +171,13 @@ public class Tile
     public int UR;
     public int UU;
     public string Name { get; set; }
-    
+
     public override bool Equals(object obj)
     {
         Tile t = null;
         try
         {
-            t = (Tile)obj;
+            t = (Tile) obj;
         }
         catch (Exception e)
         {
@@ -186,7 +186,7 @@ public class Tile
 
         if (t == null)
             return false;
-        
+
         return OO == t.OO && OL == t.OL && UL == t.UL && OR == t.OR && UR == t.UR && UU == t.UU;
     }
 }
