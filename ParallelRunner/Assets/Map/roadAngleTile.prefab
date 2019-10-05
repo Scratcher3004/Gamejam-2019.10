@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4990634163285555039}
   - component: {fileID: 4990634163284555167}
   - component: {fileID: 3452901712905789821}
+  - component: {fileID: 152505423}
   m_Layer: 0
   m_Name: roadAngleTile
   m_TagString: Untagged
@@ -96,3 +97,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: e834b34533a1cfc45bc74f5b2c152976, type: 3}
+--- !u!114 &152505423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4990634163286813535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c8c931363eb3d4591d312cb5eb187b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tile:
+    OO: 0
+    OL: 2
+    UL: 0
+    OR: 2
+    UR: 0
+    UU: 0

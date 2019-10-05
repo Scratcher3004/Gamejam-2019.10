@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4447567842090193989}
   - component: {fileID: 4447567842089227909}
   - component: {fileID: 6703335206682149505}
+  - component: {fileID: 1555117453}
   m_Layer: 0
   m_Name: roadLineTile
   m_TagString: Untagged
@@ -96,3 +97,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 30f9fb788eef4554ca14c81e5c0eebd1, type: 3}
+--- !u!114 &1555117453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4447567842087225413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c8c931363eb3d4591d312cb5eb187b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tile:
+    OO: 0
+    OL: 2
+    UL: 0
+    OR: 0
+    UR: 2
+    UU: 0

@@ -21,30 +21,27 @@ public static class Generator
 
 
     private static List<Tile> standardtiles = new List<Tile>();
-    static Tile Tile0;
-    static Tile Tile1;
-    static Tile Tile2;
-    static Tile Tile3;
-    static Tile Tile4;
-    static Tile Tile5;
-    static Tile Tile6;
-    static Tile Tile7;
-    static Tile Tile8;
-    static Tile Tile9;
+    public static Tile Tile0 { get; set; }
+    public static Tile Tile1;
+    public static Tile Tile2;
+    public static Tile Tile3;
+    public static Tile Tile4;
+    public static Tile Tile5;
+    public static Tile Tile6;
+    public static Tile Tile7;
+    public static Tile Tile8;
 
     public static void InitStandardTiles()
     {
         Tile0 = new Tile {OO = 0, OL = 2, OR = 2, UL = 0, UR = 2, UU = 0, Name = "Tile0"};
-        Tile1 = new Tile {OO = 1, OL = 2, OR = 2, UL = 0, UR = 2, UU = 0, Name = "Tile1"};
-        Tile2 = new Tile {OO = 2, OL = 2, OR = 2, UL = 0, UR = 2, UU = 0, Name = "Tile2"};
+        Tile1 = new Tile {OO = 2, OL = 0, OR = 2, UL = 2, UR = 0, UU = 2, Name = "Tile1"};
+        Tile2 = new Tile {OO = 0, OL = 0, OR = 0, UL = 0, UR = 0, UU = 0, Name = "Tile2"};
         Tile3 = new Tile {OO = 1, OL = 1, OR = 1, UL = 1, UR = 1, UU = 1, Name = "Tile3"};
-            
-        Tile4 = new Tile {OO = 0, OL = 2, OR = 2, UL = 0, UR = 2, UU = 0, Name = "Tile4"};
-        Tile5 = new Tile {OO = 3, OL = 2, OR = 2, UL = 0, UR = 2, UU = 0, Name = "Tile5"};
-        Tile6 = new Tile {OO = 2, OL = 2, OR = 2, UL = 0, UR = 2, UU = 0, Name = "Tile6"};
-        Tile7 = new Tile {OO = 2, OL = 2, OR = 2, UL = 0, UR = 2, UU = 0, Name = "Tile7"};
-        Tile8 = new Tile {OO = 1, OL = 2, OR = 2, UL = 0, UR = 2, UU = 0, Name = "Tile8"};
-        Tile9 = new Tile {OO = 0, OL = 2, OR = 2, UL = 0, UR = 2, UU = 0, Name = "Tile9"};
+        Tile4 = new Tile {OO = 0, OL = 2, OR = 2, UL = 0, UR = 0, UU = 0, Name = "Tile4"};
+        Tile5 = new Tile {OO = 3, OL = 3, OR = 2, UL = 2, UR = 3, UU = 3, Name = "Tile5"};
+        Tile6 = new Tile {OO = 3, OL = 3, OR = 0, UL = 0, UR = 3, UU = 3, Name = "Tile6"};
+        Tile7 = new Tile {OO = 3, OL = 3, OR = 3, UL = 3, UR = 3, UU = 3, Name = "Tile7"};
+        Tile8 = new Tile {OO = 0, OL = 2, OR = 0, UL = 0, UR = 2, UU = 0, Name = "Tile8"};
         standardtiles.Add(Tile0);
         standardtiles.Add(Tile1);
         standardtiles.Add(Tile2);
@@ -54,7 +51,6 @@ public static class Generator
         standardtiles.Add(Tile6);
         standardtiles.Add(Tile7);
         standardtiles.Add(Tile8);
-        standardtiles.Add(Tile9);
     }
 
 

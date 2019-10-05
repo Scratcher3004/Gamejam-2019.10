@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 3424728487390018434}
   - component: {fileID: 3424728487391115586}
   - component: {fileID: 3424728487393044353}
+  - component: {fileID: 905466958}
   m_Layer: 0
   m_Name: blockedTile
   m_TagString: Untagged
@@ -39,7 +40,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3424728487393044354}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -1.75, y: -0, z: 4.82}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
@@ -48,7 +49,7 @@ Transform:
   - {fileID: 3424728488097157463}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
 --- !u!33 &3424728487390018434
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -111,6 +112,25 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 7c8eca8ad21e87b4ca86092ecbfb815e, type: 3}
+--- !u!114 &905466958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3424728487393044354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c8c931363eb3d4591d312cb5eb187b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tile:
+    OO: 1
+    OL: 1
+    UL: 1
+    OR: 1
+    UR: 1
+    UU: 1
 --- !u!65 &3424728488097549269
 BoxCollider:
   m_ObjectHideFlags: 0

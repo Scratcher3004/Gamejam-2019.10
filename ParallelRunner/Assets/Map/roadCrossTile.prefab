@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 349870662479933083}
   - component: {fileID: 349870662478933083}
   - component: {fileID: 8421110276995196602}
+  - component: {fileID: 1365750520}
   m_Layer: 0
   m_Name: roadCrossTile
   m_TagString: Untagged
@@ -96,3 +97,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 6a1f8c3564a6f2049aa3289ab75f15ad, type: 3}
+--- !u!114 &1365750520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349870662476739227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c8c931363eb3d4591d312cb5eb187b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tile:
+    OO: 2
+    OL: 0
+    UL: 2
+    OR: 2
+    UR: 0
+    UU: 2

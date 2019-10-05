@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1024834699978146792}
   - component: {fileID: 7093696593561750918}
   - component: {fileID: 1466345467}
+  - component: {fileID: 8954294095199809821}
   m_Layer: 0
   m_Name: bridgeTile
   m_TagString: Untagged
@@ -110,6 +111,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c331c72e8a0f84e8771bdffba0b709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8954294095199809821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024834699976219944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c8c931363eb3d4591d312cb5eb187b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tile:
+    OO: 3
+    OL: 3
+    UL: 2
+    OR: 2
+    UR: 3
+    UU: 3
 --- !u!64 &1024834698590108372
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -131,10 +151,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1024834699976245512}
     m_Modifications:
-    - target: {fileID: 100000, guid: 6ac654dfc7791084c8c2bfbc88f094f8, type: 3}
-      propertyPath: m_Name
-      value: bridge
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6ac654dfc7791084c8c2bfbc88f094f8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -182,6 +198,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 6ac654dfc7791084c8c2bfbc88f094f8, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ac654dfc7791084c8c2bfbc88f094f8, type: 3}
+      propertyPath: m_Name
+      value: bridge
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ac654dfc7791084c8c2bfbc88f094f8, type: 3}

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3572927241215702097}
   - component: {fileID: 3572927241214703249}
   - component: {fileID: 2105766809129522291}
+  - component: {fileID: 69397259}
   m_Layer: 0
   m_Name: roadForkTile
   m_TagString: Untagged
@@ -96,3 +97,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 2939f1cb4609c7540bcabb23da066f59, type: 3}
+--- !u!114 &69397259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3572927241212504145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c8c931363eb3d4591d312cb5eb187b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tile:
+    OO: 0
+    OL: 2
+    UL: 0
+    OR: 2
+    UR: 2
+    UU: 0

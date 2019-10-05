@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5218645657186700939}
   - component: {fileID: 1297723254}
   - component: {fileID: 1297723255}
+  - component: {fileID: 2220065770861115116}
   m_Layer: 0
   m_Name: seaTile
   m_TagString: Untagged
@@ -108,3 +109,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c331c72e8a0f84e8771bdffba0b709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2220065770861115116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5218645657184440395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c8c931363eb3d4591d312cb5eb187b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tile:
+    OO: 3
+    OL: 3
+    UL: 3
+    OR: 3
+    UR: 3
+    UU: 3
