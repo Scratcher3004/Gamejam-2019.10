@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 
 public static class Generator
@@ -11,16 +10,16 @@ public static class Generator
     // 0 = OL, 1 = OR, 2 = R, 3 = UR, 4 = UL, 5 = L
 
     private static List<Tile> standardtiles = new List<Tile>();
-    static Tile Tile0;
-    static Tile Tile1;
-    static Tile Tile2;
-    static Tile Tile3;
-    static Tile Tile4;
-    static Tile Tile5;
-    static Tile Tile6;
-    static Tile Tile7;
-    static Tile Tile8;
-    static Tile Tile9;
+    public static Tile Tile0 { get; set; };
+    public static Tile Tile1;
+    public static Tile Tile2;
+    public static Tile Tile3;
+    public static Tile Tile4;
+    public static Tile Tile5;
+    public static Tile Tile6;
+    public static Tile Tile7;
+    public static Tile Tile8;
+    public static Tile Tile9;
 
     public static void InitStandardTiles()
     {
@@ -81,8 +80,6 @@ public static class Generator
 
 
 }
-public class Tile
-{
 
 [Serializable]
 public class Tile
@@ -94,8 +91,26 @@ public class Tile
     public int OR;
     public int UR;
     public int UU;
+
+    public override bool Equals(object obj)
+    {
+        Tile t = null;
+        try
+        {
+            t = (Tile)obj;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+
+        if (t == null)
+            return false;
+        
+        return OO == t.OO && OL == t.OL && UL == t.UL && OR == t.OR && UR == t.UR && UU == t.UU;
+    }
+
     public string Name { get; set; }
     
     
 }
-
