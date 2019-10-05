@@ -61,7 +61,7 @@ public static class Generator
         else
             zufall = new System.Random(seed);
         
-        Tile[,] result = new Tile[width, height];
+        Tile[,] result = new Tile[height, width];
         for (int x = 0; x < height; x++)
         {
             for (int y = 0; y < width; y++)
@@ -97,9 +97,9 @@ public static class Generator
         {
             counter += 1;
             Tile t = standardtiles[zufall.Next(0,9)];
-            if (t.Name == "Tile3")
+            if (t.Name == "Tile3" || t.Name == "Tile6" || t.Name == "Tile2" || t.Name == "Tile7")
             {
-                continue;
+                if (counter % 3 != 0) continue;
             }
 
             bool res1 = IsTileCompatibleOO(t, posX, posY, tileMap);
@@ -171,13 +171,13 @@ public class Tile
     public int UR;
     public int UU;
     public string Name { get; set; }
-
+    
     public override bool Equals(object obj)
     {
         Tile t = null;
         try
         {
-            t = (Tile) obj;
+            t = (Tile)obj;
         }
         catch (Exception e)
         {
@@ -186,7 +186,7 @@ public class Tile
 
         if (t == null)
             return false;
-
+        
         return OO == t.OO && OL == t.OL && UL == t.UL && OR == t.OR && UR == t.UR && UU == t.UU;
     }
 }
