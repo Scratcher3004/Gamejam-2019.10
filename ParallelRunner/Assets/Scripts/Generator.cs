@@ -68,6 +68,8 @@ public static class Generator
 
 
 }
+public class Tile
+{
 
 [Serializable]
 public class Tile
