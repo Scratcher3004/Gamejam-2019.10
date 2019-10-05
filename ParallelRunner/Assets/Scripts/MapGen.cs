@@ -27,8 +27,9 @@ public class MapGen : MonoBehaviour
         
         Generator.InitStandardTiles();
         var length = 25;
-        var tm = Generator.GetTileMap(length, length, 527);
-        for (var xIndex = 0; xIndex < length; xIndex++)
+        var height = 5;
+        var tm = Generator.GetTileMap(length, height, 9000);
+        for (var xIndex = 0; xIndex < height; xIndex++)
         {
             for (var yIndex = 0; yIndex < length; yIndex++)
             {
@@ -64,19 +65,19 @@ public class MapGen : MonoBehaviour
                 }
                 
                 var obj = Instantiate(toInst, Container);
-                obj.transform.rotation = Quaternion.Euler(-90, rot, 0);
+                obj.transform.rotation = Quaternion.Euler(-90, rot + obj.transform.eulerAngles.y, 0);
 
                 var xpos = 4.45f * yIndex/* + (Mathf.IsPowerOfTwo(xIndex) ? 0 : 4.45f / 2)*/;
-                var zpos = 5.15f * xIndex + (yIndex / 2 == yIndex / 2f ? 0 : -2.55f);
+                var zpos = 5.15f * xIndex + (yIndex / 2 == yIndex / 2f ? 0 : 2.55f);
                 
                 obj.transform.position = new Vector3(xpos, 0, zpos);
                 
-                Debug.Log("Generated one tile!");
                 // 5.4-0,25  = 5,15
                 // 1,75+2,75 = 4,5
                 // 2,85-0,3  = 2,55
             }
         }
+        
         Debug.Log("Finished Environment Generation!");
 
         goodWorldColor = transform.GetChild(0).GetComponent<Renderer>().material.color;
