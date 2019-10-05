@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\peter\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\peter\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_ParallelRunner.218104634.00" t="ExcludeRecursive" />
-    <e p="D:\Gamejam\Gamejam-2019.10\ParallelRunner" t="IncludeRecursive">
+    <e p="$USER_HOME$/.Rider2019.1/system/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2019.1/system/resharper-host/local/Transient/ReSharperHost/v191/SolutionCaches/_ParallelRunner.1033068703.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -41,8 +41,8 @@
           <e p="CamControl.cs" t="Include" />
           <e p="Drown.cs" t="Include" />
           <e p="Generator.cs" t="Include" />
-          <e p="MapGen.cs" t="Include" />
           <e p="MBTile.cs" t="Include" />
+          <e p="MapGen.cs" t="Include" />
         </e>
         <e p="Standard Assets" t="Include">
           <e p="2D" t="Include">
@@ -232,10 +232,10 @@
             <e p="DragRigidbody.cs" t="Include" />
             <e p="DynamicShadowSettings.cs" t="Include" />
             <e p="EventSystemChecker.cs" t="Include" />
-            <e p="FollowTarget.cs" t="Include" />
-            <e p="ForcedReset.cs" t="Include" />
             <e p="FOVKick.cs" t="Include" />
             <e p="FPSCounter.cs" t="Include" />
+            <e p="FollowTarget.cs" t="Include" />
+            <e p="ForcedReset.cs" t="Include" />
             <e p="LerpControlledBob.cs" t="Include" />
             <e p="ObjectResetter.cs" t="Include" />
             <e p="ParticleSystemDestroyer.cs" t="Include" />
@@ -254,8 +254,8 @@
               <e p="Scripts" t="Include">
                 <e p="AeroplaneAiControl.cs" t="Include" />
                 <e p="AeroplaneAudio.cs" t="Include" />
-                <e p="AeroplaneController.cs" t="Include" />
                 <e p="AeroplaneControlSurfaceAnimator.cs" t="Include" />
+                <e p="AeroplaneController.cs" t="Include" />
                 <e p="AeroplanePropellerAnimator.cs" t="Include" />
                 <e p="AeroplaneUserControl2Axis.cs" t="Include" />
                 <e p="AeroplaneUserControl4Axis.cs" t="Include" />
@@ -286,10 +286,10 @@
           </e>
         </e>
       </e>
+      <e p="ParallelRunner.sln" t="IncludeFlat" />
+      <e p="Temp/bin" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="ParallelRunner.sln" t="IncludeFlat" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
   </component>
 </project>

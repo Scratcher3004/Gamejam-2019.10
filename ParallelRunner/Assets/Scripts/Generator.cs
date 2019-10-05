@@ -5,7 +5,6 @@ using UnityEngine;
 
 
 
-
 public static class Generator
 {
 
@@ -20,8 +19,8 @@ public static class Generator
     // 0 = OL, 1 = OR, 2 = R, 3 = UR, 4 = UL, 5 = L
 
 
-    private static List<Tile> standardtiles = new List<Tile>();
-    public static Tile Tile0 { get; set; }
+    public static List<Tile> standardtiles = new List<Tile>();
+    public static Tile Tile0;
     public static Tile Tile1;
     public static Tile Tile2;
     public static Tile Tile3;
@@ -74,9 +73,9 @@ public static class Generator
                 }
                 else
                 {
-                    Tile t = GenerateTile(result, x, y, width);
+                    Tile t = GenerateTile(result, x, y, width, seed);
                     if (t == null)
-                        throw new Exception("No Tile found!");
+                        t = Tile2;
                     result[x, y] = t;
                 }
             }
@@ -84,15 +83,25 @@ public static class Generator
         return result;
     }
 
-    private static Tile GenerateTile(Tile[,] tileMap, int posX, int posY, int width)
+    private static Tile GenerateTile(Tile[,] tileMap, int posX, int posY, int width, int seed)
     {
+        System.Random zufall;
+        if (seed == 0)
+            zufall = new System.Random();
+        else
+            zufall = new System.Random(seed);
         Tile result = null;
         int counter = 0;
         bool gefunden = false;
-        System.Random zufall = new Random();
         while ((gefunden == false) && (counter < 30))
         {
+            counter += 1;
             Tile t = standardtiles[zufall.Next(0,9)];
+            if (t.Name == "Tile3" || t.Name == "Tile6")
+            {
+                continue;
+            }
+
             bool res1 = IsTileCompatibleOO(t, posX, posY, tileMap);
             bool res2 = IsTileCompatibleOL(t, posX, posY, tileMap);
             bool res3 = IsTileCompatibleOR(t, posX, posY, tileMap,width);
@@ -106,36 +115,10 @@ public static class Generator
         return result;
     }
 
-//    private bool IsTileCompatible(Tile[,] tilemap, Tile originalTile, int direction, int tilexpos, int tileypos, int height, int width)
-//    {
-//        bool result = false;
-//        switch (direction)
-//        {
-//            case 2:
-//                if (tileypos > 0)
-//                {
-//                    if (tilexpos < width)
-//                    {
-//                        result = AreTilesCompatible(originalTile.OL, 
-//                            tilemap[tilexpos,tileypos - 1]);
-//                    }
-//                }
-//
-//                break;
-//                
-//            case 3:
-//                break;
-//            
-//            default:
-//                return result; 
-//        }
-//    }
-
-
     private static bool IsTileCompatibleOO(Tile originalTile,int xPos, int yPos, Tile[,] tileMap)
     {
         if (yPos == 0) return true;
-        return AreTilesCompatible(originalTile.OO, tileMap[xPos, yPos].UU);
+        return AreTilesCompatible(originalTile.OO, tileMap[xPos, yPos-1].UU);
     }
 
     private static bool IsTileCompatibleOL(Tile originalTile,int xPos, int yPos, Tile[,] tileMap)
@@ -164,13 +147,13 @@ public static class Generator
         else
         {
             if (yPos == 0) return true;
-            return AreTilesCompatible(originalTile.OL, tileMap[xPos + 1, yPos-1].UR);
+            return AreTilesCompatible(originalTile.OL, tileMap[xPos - 1, yPos+1].UR);
         }        
     }    
     
     private static bool AreTilesCompatible(int tilepos_a, int tilepos_b)
     {
-        if (tilepos_a != Land) return true;
+        if (tilepos_b != Road) return true;
         if (tilepos_a == tilepos_b) return true;
         return false;
     }
@@ -206,6 +189,4 @@ public class Tile
         
         return OO == t.OO && OL == t.OL && UL == t.UL && OR == t.OR && UR == t.UR && UU == t.UU;
     }
-}
-
 }
