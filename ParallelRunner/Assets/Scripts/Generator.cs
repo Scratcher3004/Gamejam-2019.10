@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public static class Generator
 {
 
@@ -18,17 +19,6 @@ public static class Generator
     public static Tile Tile8;
     public static Tile Tile9;
 
-    public class Tile {
-
-        // 0 = Land, 1 = Block, 2= Road, 3= Water
-        public int OO {get; set;}
-        public int OL {get; set;}        
-        public int UL {get; set;}
-        public int OR {get; set;}
-        public int UR {get; set;}
-        public int UU {get; set;}
-    }    
-
     public static void InitStandardTiles()
     {
         Tile0 = new Tile{OO = 0, OL = 2, OR = 2, UL = 0, UR = 2, UU = 0}; 
@@ -44,7 +34,33 @@ public static class Generator
     }
 
 
-    public static GenerateField
+    public static Tile[,] GetTileMap(int width, int height)
+    {
+        Tile[,] result = new Tile[width,height];
+        for (int x = 0; x < height; x++)
+        {
+            for (int y = 0; y < width; y++)
+            {
+                result[x, y] = Tile0;
+            }
+        }
+        
+        return result;
+    }
+    
+    
+    public class Tile {
+
+        
+        // 0 = Land, 1 = Block, 2= Road, 3= Water
+        public int OO {get; set;}
+        public int OL {get; set;}        
+        public int UL {get; set;}
+        public int OR {get; set;}
+        public int UR {get; set;}
+        public int UU {get; set;}
+    }    
+
     
 
 }
