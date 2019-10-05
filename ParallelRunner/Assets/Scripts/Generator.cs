@@ -72,14 +72,18 @@ public static class Generator
 public class Tile
 {
 
-
+[Serializable]
+public class Tile
+{
     // 0 = Land, 1 = Block, 2= Road, 3= Water
-    public int OO { get; set; }
-    public int OL { get; set; }
-    public int UL { get; set; }
-    public int OR { get; set; }
-    public int UR { get; set; }
-    public int UU { get; set; }
+    public int OO;
+    public int OL;
+    public int UL;
+    public int OR;
+    public int UR;
+    public int UU;
     public string Name { get; set; }
+    
+    
 }
 

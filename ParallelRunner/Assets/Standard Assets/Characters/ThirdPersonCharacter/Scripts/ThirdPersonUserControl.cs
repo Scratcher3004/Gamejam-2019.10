@@ -32,12 +32,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             // we use world-relative directions
             m_Move = v*Vector3.forward + h*Vector3.right;
 
-            if (m_Jump)
-                Debug.Log("Jump! 0");
-            
-            if (roll)
-                Debug.Log("Roll! 0");
-            
             // pass all parameters to the character control script
             m_Character.Move(m_Move, roll, m_Jump);
         }
