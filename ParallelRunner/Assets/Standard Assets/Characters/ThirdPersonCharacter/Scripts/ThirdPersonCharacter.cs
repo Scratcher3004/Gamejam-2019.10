@@ -122,10 +122,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// check whether conditions are right to allow a jump:
 			if (jump)
 			{
-				Debug.Log("Jump! 1");
 				if (!roll && currentClipName != "JumpStanding" && currentClipName != "JumpRunning" && currentClipName != "Roll")
 				{
-					Debug.Log("Jump! 4");
 					// jump!
 					//m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
 					m_IsGrounded = false;
@@ -136,7 +134,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 
 			if (currentClipName == "JumpStanding" || currentClipName == "JumpRunning" || jump)
-				Debug.Log(m_Animator.applyRootMotion);
+			{}
 			else
 				m_Animator.applyRootMotion = false;
 			
